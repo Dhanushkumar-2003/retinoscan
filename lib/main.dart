@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retinascan/home.dart';
+import 'package:retinascan/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: FirstAlertDialog());
+        home: Splash_screen());
   }
 }
