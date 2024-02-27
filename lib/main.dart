@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:retinascan/exam.dart';
 import 'package:retinascan/home.dart';
+import 'package:retinascan/signup%20.dart';
+
 import 'package:retinascan/splashscreen.dart';
 
 void main() {

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:retinascan/home.dart';
+import 'package:retinascan/signup%20.dart';
 
 class Splash_screen extends StatefulWidget {
   const Splash_screen({super.key});
@@ -16,8 +17,8 @@ class _Splash_screenState extends State<Splash_screen> {
     super.initState();
     Timer(
         Duration(seconds: 3),
-        () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => FirstAlertDialog())));
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => sign_page())));
   }
 
   @override

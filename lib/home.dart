@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:retinascan/exam.dart';
 
 class FirstAlertDialog extends StatelessWidget {
   @override
@@ -158,13 +159,14 @@ class SecondAlertDialog extends StatelessWidget {
                 child: Center(
                   child: TextButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return SecondAlertDialog();
-                        },
-                      );
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Exam()));
+                      // showDialog(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return SecondAlertDialog();
+                      //   },
+                      // );
                     },
                     child: Container(
                       decoration: BoxDecoration(

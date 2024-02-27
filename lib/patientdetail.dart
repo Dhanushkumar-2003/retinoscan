@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:retinascan/image_test.dart';
 
 class Patient_detail extends StatefulWidget {
   const Patient_detail({super.key});
@@ -10,6 +11,11 @@ class Patient_detail extends StatefulWidget {
 }
 
 class _Patient_detailState extends State<Patient_detail> {
+  TextEditingController _firstname = TextEditingController();
+  TextEditingController _lastname = TextEditingController();
+  TextEditingController _age = TextEditingController();
+  TextEditingController _gender = TextEditingController();
+  TextEditingController exam_code = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +62,7 @@ class _Patient_detailState extends State<Patient_detail> {
               Container(
                 height: 40,
                 child: TextField(
+                  controller: _firstname,
                   // ignore: unnecessary_const
                   decoration: const InputDecoration(
                     hintText: "First Name*",
@@ -72,6 +79,7 @@ class _Patient_detailState extends State<Patient_detail> {
               Container(
                 height: 40,
                 child: TextField(
+                  controller: _lastname,
                   // ignore: unnecessary_const
                   decoration: const InputDecoration(
                     hintText: "Last Name*",
@@ -88,7 +96,9 @@ class _Patient_detailState extends State<Patient_detail> {
               Container(
                 height: 40,
                 child: TextField(
-                  // ignore: unnecessary_const
+                  controller: _age,
+                  // ignore: unnece
+                  // ssary_const
                   decoration: const InputDecoration(
                     hintText: "Date Of Birth*",
                     border: OutlineInputBorder(
@@ -104,6 +114,7 @@ class _Patient_detailState extends State<Patient_detail> {
               Container(
                 height: 40,
                 child: TextField(
+                  controller: _gender,
                   // ignore: unnecessary_const
                   decoration: const InputDecoration(
                     hintText: "Gender*",
@@ -127,6 +138,7 @@ class _Patient_detailState extends State<Patient_detail> {
                   Container(
                     height: 40,
                     child: TextField(
+                      controller: exam_code,
                       // ignore: unnecessary_const
                       decoration: const InputDecoration(
                         hintText: "Exam code",
@@ -170,14 +182,15 @@ class _Patient_detailState extends State<Patient_detail> {
                 child: Center(
                   child: TextButton(
                     onPressed: () {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) =>()));
-                      // showDialog(
-                      //   context: context,
-                      //   builder: (BuildContext context) {
-                      //     return SecondAlertDialog();
-                      //   },
-                      // );
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Result(
+                                  firstname: _firstname.text,
+                                  lastname: _lastname.text,
+                                  gender: _gender.text,
+                                  age: _age.text,
+                                  exam_code: exam_code.text)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
